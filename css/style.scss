@@ -1,0 +1,548 @@
+html{
+	font-size:16px;
+	height:100%;
+}
+@import "basic";
+input,li,textarea{
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+body{
+	margin:0px;
+	padding:0px;
+	height:100%;
+	overflow: hidden;
+}
+.container1{
+	height:100%;
+	overflow: hidden;
+	@include bcg-img("bcg1.jpg",0,0,100%,100%);
+	position:relative;
+	.wrap{
+		position:relative;
+	}
+	.top{
+		width:count(598);
+		height:count(388);
+		@include bcg-img("page1-theme.png",0,0,100%,100%);
+		@include absolute_left_top(50%,count(282));
+		margin-left: count(-598/2);
+		z-index: 5;
+	}
+	h1{
+		text-indent: -99999px;
+	}
+	.btn-start{
+		width:count(372);
+		height:count(90);
+		@include bcg-img("btn-start.png",center,center,count(241),count(62));
+		background-color: rgb(255,251,31);
+		@include absolute_left_top(50%,count(719));
+		margin-left: count(-372/2);
+		a{
+			@extend %link-a;
+		}
+	}
+	.btn-rules{
+		width:count(372);
+		height:count(90);
+		@include bcg-img("btn-info.png",center,center,count(241),count(62));
+		background-color: white;
+		@include absolute_left_top(50%,count(857));
+		margin-left: count(-372/2);
+		a{
+			@extend %link-a;
+		}
+	}
+	.rank{
+		display:block;
+		color:rgb(255,251,31);
+		position:absolute;
+		top:(984/16/2)+rem;
+		width: 100%;
+		text-align: center;
+		-webkit-tap-highlight-color: rgba(255,0,0,0);
+		font:{
+			size:(18/16)+rem;
+			family: "SimHei";
+		}
+	}
+}
+.container2{
+	height:100%;
+	overflow: hidden;
+	@include bcg-img("bcg2.jpg",0,0,100%,100%);
+	position:relative;
+	.wrap{
+		position:relative;
+		overflow: auto;
+	}
+	.zhezhao{
+		width:100%;
+		height:100%;
+		position:absolute;
+		left:0px;
+		top:0px;
+		z-index:999;
+	}
+	.guide{
+		width:100%;
+		height:100%;
+		@include bcg-img("zhezhao.png",0,0,100%,100%);
+		@include absolute_left_top(0,0);
+		z-index:99;
+		p{
+			@include font(count(36),"SimHei");
+			margin:0;
+			@include absolute_left_top(40%,count(795));
+			color:white;
+		}
+	}
+	.win{
+		display:none;
+		.word{
+			width:count(528);
+			height:count(195);
+			margin-left: count(-528/2);
+			@include bcg-img("gongxi.png",0,0,100%,100%);
+			@include absolute_left_top(50%,count(324));
+		}
+	}
+	.win_box{
+		width:count(690);
+		height:count(299);
+		border:count(10) solid rgb(21,89,38);
+		@include absolute_left_top(50%,count(545));
+		margin-left: count(-690/2);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+		text-align: center;
+		span{
+			display:block;
+			color:rgb(255,251,31);
+			line-height: count(299);
+			@include font(count(100),"SimHei");
+		}
+	}
+	.btn-get{
+		width:count(372);
+		height:count(90);
+		@include absolute_left_top(50%,count(905));
+		margin-left: count(-372/2);
+		@include bcg-img("get-reward.png",center,center,count(243),count(65));
+		background-color: white;
+	}
+	.share{
+		display:none;
+		width:count(383);
+		height:count(176);
+		@include bcg-img("share.png",0,0,100%,100%);
+		@include absolute_right_top(0,0);
+		@include font(count(36),"SimHei");
+		color:white;
+		box-sizing: border-box;
+		padding-left: 8%;
+		padding-right: 8%;
+		text-align: center;
+		padding-top: 6%;
+	}
+	.loss{
+		display:none;
+		.word{
+			width:count(527);
+			height:count(197);
+			margin-left: count(-528/2);
+			@include bcg-img("loss.png",0,0,100%,100%);
+			@include absolute_left_top(50%,count(324));
+		}
+	}
+	.loss_box{
+		width:count(690);
+		height:count(299);
+		border:count(10) solid rgb(21,89,38);
+		@include absolute_left_top(50%,count(545));
+		margin-left: count(-690/2);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+		text-align: center;
+		span{
+			display:block;
+			color:rgb(255,251,31);
+			line-height: count(299);
+			@include font(count(100),"SimHei");
+		}
+	}
+	.choujiang{
+		display:none;
+	}
+	.choujiang .word{
+		width:count(500);
+		height:count(250);
+		border:count(10) solid rgb(21,89,38);
+		@include absolute_left_top(50%,count(400));
+		margin-left: count(-500/2);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+		text-align: center;
+		@include font(count(48),"SimHei");
+		color:rgb(255,251,31);
+		line-height: count(250);
+	}
+	.choujiang .btn-dui{
+		width:count(372);
+		height:count(90);
+		@include absolute_left_top(50%,count(705));
+		margin-left: count(-372/2);
+		@include bcg-img("btn-dui.png",center,center,count(246),count(65));
+		background-color: white;
+	}
+	.score{
+		width:count(414);
+		height:count(120);
+		border:count(10) solid rgb(21,89,38);
+		@include absolute_left_top(50%,count(20));
+		margin-left: count(-414/2);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+		text-align: center;
+		@include font(count(48),"SimHei");
+		line-height:3.15rem;
+		color:white;
+		span{
+			color:rgb(255,251,31);
+		}
+	}
+	.arrow{
+		width:count(198);
+		height:count(221);
+		@include bcg-img("arrow.png",0,0,100%,100%);
+		@include absolute_left_top(50%,count(894));
+	}
+	.slideDown{
+		-webkit-animation-name: slideDown;
+		animation-name: slideDown;
+		-webkit-animation-duration: 5s;
+		animation-duration: 5s;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+	}
+	.socks{
+		width:count(178*1.1);
+		height:count(184*1.1);
+		@include bcg-img("socks.png",0,0,100%,100%);
+		@include absolute_left_bottom(50%,0);
+		margin-left: count(-178*1.2/2);
+		z-index:20;
+	}
+}
+.container3{
+	height:100%;
+	@include bcg-img("rank-bcg.jpg",0,0,100%,100%);
+	position:relative;
+	overflow: hidden;
+	.wrap{
+		position:relative;
+		overflow: auto;
+	}
+	.top{
+		width:count(492);
+		height:count(184);
+		@include bcg-img("rank.png",0,0,100%,100%);
+		@include absolute_left_top(50%,count(252));
+		margin-left: count(-492/2);
+		text-indent: -9999px;
+	}
+	p{
+		margin:0;
+		color:rgb(255,251,31);
+		@include font(count(32),"SimHei");
+		position:absolute;
+		top:count(427);
+		width:100%;
+		text-align: center;
+	}
+	.man{
+		width:count(110);
+		height:count(137);
+		@include bcg-img("man-small.png",0,0,100%,100%);
+		@include absolute_left_bottom(0,0);
+		z-index: 10;
+	}
+	.tree{
+		width:count(207);
+		height:count(184);
+		@include bcg-img("gifts-small.png",0,0,100%,100%);
+		@include absolute_right_bottom(0,0);
+		z-index: 10;
+	}
+	.main{
+		width:count(693);
+		max-height:count(346*2);
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+		border:count(10) solid rgb(21,89,38);
+		@include absolute_left_top(50%,count(481));
+		margin-left: count(-693/2);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+	}
+	table{
+		width:100%;
+		table-layout: fixed;
+		border-collapse: collapse;
+		thead{
+			@include font(count(44),"SimHei");
+			color:white;
+			line-height:1.8;
+		}
+		td{
+			width:25%;
+			text-align: center;
+			@extend %oneline-ellipsis;
+			@include font(count(28),"SimHei");
+			border-top:1px solid rgb(1,100,26);
+			padding:0.3rem 0;
+		}
+		tr{
+			color:white;
+		}
+		tr.active{
+			color:rgb(255,251,31);
+		}
+	}
+}
+.container4{
+	height:100%;
+	@include bcg-img("bcg1.jpg",0,0,100%,100%);
+	position:relative;
+	overflow: hidden;
+	.wrap{
+		position:relative;
+		overflow: auto;
+	}
+	.top{
+		width:count(576);
+		height:count(167);
+		@include bcg-img("reward-address.png",0,0,100%,100%);
+		@include absolute_left_top(50%,count(257));
+		margin-left: count(-576/2);
+	}
+	form{
+		width:count(690);
+		box-sizing: border-box;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border:count(10) solid rgb(21,89,38);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+		@include absolute_left_top(50%,count(438));
+		margin-left: count(-690/2);
+		label{
+			width:count(625);
+			margin:0 auto;
+			color:rgb(255,251,31);
+			@include font(count(36),"SimHei");
+			display:block;
+		}
+		input{
+			display:block;
+			margin:0 auto;
+			box-sizing: border-box;
+			margin-top: 0.2rem;
+			margin-bottom: 0.2rem;
+			padding-left: 0.2rem;
+			padding-right: 0.2rem;
+			width:count(625);
+			height:count(66);
+			@include font(count(36),"SimHei");
+		}
+		textarea{
+			display:block;
+			margin:0 auto;
+			margin-top: 0.2rem;
+			margin-bottom: 0.2rem;
+			padding-left: 0.2rem;
+			padding-right: 0.2rem;
+			box-sizing: border-box;
+			width:count(625);
+			height:count(126);
+			resize: none;
+			@include font(count(36),"SimHei");
+		}
+		button{
+			width:count(372);
+			height:count(90);
+			border:none;
+			@include bcg-img("submit-info.png",center,center,count(249),count(59));
+			background-color: white;
+			@include absolute_left_top(50%,count(502));
+			margin-left: count(-372/2);
+		}
+	}
+}
+.container5{
+	height:100%;
+	@include bcg-img("rank-bcg.jpg",0,0,100%,100%);
+	position:relative;
+	overflow: hidden;
+	.wrap{
+		position:relative;
+		overflow: auto;
+	}
+	.top{
+		width:count(554);
+		height:count(161);
+		@include bcg-img("reward_detail.png",0,0,100%,100%);
+		@include absolute_left_top(50%,count(282));
+		margin-left: count(-554/2);
+		text-indent: -9999px;
+	}
+	.man{
+		width:count(110);
+		height:count(137);
+		@include bcg-img("man-small.png",0,0,100%,100%);
+		@include absolute_left_bottom(0,0);
+		z-index: 10;
+	}
+	.tree{
+		width:count(207);
+		height:count(184);
+		@include bcg-img("gifts-small.png",0,0,100%,100%);
+		@include absolute_right_bottom(0,0);
+		z-index: 10;
+	}
+	.main{
+		margin:0px;
+		padding:0px;
+		width:count(693);
+		max-height:count(346*2);
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		border:count(10) solid rgb(21,89,38);
+		@include absolute_left_top(50%,count(481));
+		margin-left: count(-693/2);
+		border-radius: count(20);
+		background-color: rgb(20,116,44);
+		box-sizing: border-box;
+		box-shadow: 0 0 0 0.2rem rgb(10,34,8);
+		list-style-position: inside;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		li{
+			color:white;
+			line-height: 1.5;
+			@include font(count(28),"SimHei");
+		}
+	}
+}
+@-webkit-keyframes slideDown {
+	from{
+		top:count(-184);
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+	to{
+		top:100%;
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
+}
+@keyframes slideDown {
+	from{
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		top:count(-184);
+	}
+	to{
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+		top:100%;
+	}
+}
+@-webkit-keyframes shake {
+	from, to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translate3d(-5px, 0, 0);
+		transform: translate3d(-5px, 0, 0);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translate3d(5px, 0, 0);
+		transform: translate3d(5px, 0, 0);
+	}
+}
+
+@keyframes shake {
+	from, to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	10%, 30%, 50%, 70%, 90% {
+		-webkit-transform: translate3d(-5px, 0, 0);
+		transform: translate3d(-5px, 0, 0);
+	}
+
+	20%, 40%, 60%, 80% {
+		-webkit-transform: translate3d(5px, 0, 0);
+		transform: translate3d(5px, 0, 0);
+	}
+}
+
+.shake {
+	-webkit-animation-name: shake;
+	animation-name: shake;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+}
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+	-webkit-animation-duration: 0.8s;
+	animation-duration: 0.8s;
+}

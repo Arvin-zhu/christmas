@@ -1,0 +1,647 @@
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+.container1 .btn-start a, .container1 .btn-rules a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+.container3 table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+input, li, textarea {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container1 {
+  height: 100%;
+  overflow: hidden;
+  background: url("../images/bcg1.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: relative;
+}
+.container1 .wrap {
+  position: relative;
+}
+.container1 .top {
+  width: 18.6875rem;
+  height: 12.125rem;
+  background: url("../images/page1-theme.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 8.8125rem;
+  margin-left: -9.34375rem;
+  z-index: 5;
+}
+.container1 h1 {
+  text-indent: -99999px;
+}
+.container1 .btn-start {
+  width: 11.625rem;
+  height: 2.8125rem;
+  background: url("../images/btn-start.png") no-repeat center center;
+  background-size: 7.53125rem 1.9375rem;
+  background-color: #fffb1f;
+  position: absolute;
+  left: 50%;
+  top: 22.46875rem;
+  margin-left: -5.8125rem;
+}
+.container1 .btn-rules {
+  width: 11.625rem;
+  height: 2.8125rem;
+  background: url("../images/btn-info.png") no-repeat center center;
+  background-size: 7.53125rem 1.9375rem;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 26.78125rem;
+  margin-left: -5.8125rem;
+}
+.container1 .rank {
+  display: block;
+  color: #fffb1f;
+  position: absolute;
+  top: 30.75rem;
+  width: 100%;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+  font-size: 1.125rem;
+  font-family: "SimHei";
+}
+
+.container2 {
+  height: 100%;
+  overflow: hidden;
+  background: url("../images/bcg2.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: relative;
+}
+.container2 .wrap {
+  position: relative;
+  overflow: auto;
+}
+.container2 .zhezhao {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+}
+.container2 .guide {
+  width: 100%;
+  height: 100%;
+  background: url("../images/zhezhao.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+.container2 .guide p {
+  font-size: 1.125rem;
+  font-family: "SimHei";
+  margin: 0;
+  position: absolute;
+  left: 40%;
+  top: 24.84375rem;
+  color: white;
+}
+.container2 .win {
+  display: none;
+}
+.container2 .win .word {
+  width: 16.5rem;
+  height: 6.09375rem;
+  margin-left: -8.25rem;
+  background: url("../images/gongxi.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 10.125rem;
+}
+.container2 .win_box {
+  width: 21.5625rem;
+  height: 9.34375rem;
+  border: 0.3125rem solid #155926;
+  position: absolute;
+  left: 50%;
+  top: 17.03125rem;
+  margin-left: -10.78125rem;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+  text-align: center;
+}
+.container2 .win_box span {
+  display: block;
+  color: #fffb1f;
+  line-height: 9.34375rem;
+  font-size: 3.125rem;
+  font-family: "SimHei";
+}
+.container2 .btn-get {
+  width: 11.625rem;
+  height: 2.8125rem;
+  position: absolute;
+  left: 50%;
+  top: 28.28125rem;
+  margin-left: -5.8125rem;
+  background: url("../images/get-reward.png") no-repeat center center;
+  background-size: 7.59375rem 2.03125rem;
+  background-color: white;
+}
+.container2 .share {
+  display: none;
+  width: 11.96875rem;
+  height: 5.5rem;
+  background: url("../images/share.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.125rem;
+  font-family: "SimHei";
+  color: white;
+  box-sizing: border-box;
+  padding-left: 8%;
+  padding-right: 8%;
+  text-align: center;
+  padding-top: 6%;
+}
+.container2 .loss {
+  display: none;
+}
+.container2 .loss .word {
+  width: 16.46875rem;
+  height: 6.15625rem;
+  margin-left: -8.25rem;
+  background: url("../images/loss.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 10.125rem;
+}
+.container2 .loss_box {
+  width: 21.5625rem;
+  height: 9.34375rem;
+  border: 0.3125rem solid #155926;
+  position: absolute;
+  left: 50%;
+  top: 17.03125rem;
+  margin-left: -10.78125rem;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+  text-align: center;
+}
+.container2 .loss_box span {
+  display: block;
+  color: #fffb1f;
+  line-height: 9.34375rem;
+  font-size: 3.125rem;
+  font-family: "SimHei";
+}
+.container2 .choujiang {
+  display: none;
+}
+.container2 .choujiang .word {
+  width: 15.625rem;
+  height: 7.8125rem;
+  border: 0.3125rem solid #155926;
+  position: absolute;
+  left: 50%;
+  top: 12.5rem;
+  margin-left: -7.8125rem;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "SimHei";
+  color: #fffb1f;
+  line-height: 7.8125rem;
+}
+.container2 .choujiang .btn-dui {
+  width: 11.625rem;
+  height: 2.8125rem;
+  position: absolute;
+  left: 50%;
+  top: 22.03125rem;
+  margin-left: -5.8125rem;
+  background: url("../images/btn-dui.png") no-repeat center center;
+  background-size: 7.6875rem 2.03125rem;
+  background-color: white;
+}
+.container2 .score {
+  width: 12.9375rem;
+  height: 3.75rem;
+  border: 0.3125rem solid #155926;
+  position: absolute;
+  left: 50%;
+  top: 0.625rem;
+  margin-left: -6.46875rem;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "SimHei";
+  line-height: 3.15rem;
+  color: white;
+}
+.container2 .score span {
+  color: #fffb1f;
+}
+.container2 .arrow {
+  width: 6.1875rem;
+  height: 6.90625rem;
+  background: url("../images/arrow.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 27.9375rem;
+}
+.container2 .slideDown {
+  -webkit-animation-name: slideDown;
+  animation-name: slideDown;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.container2 .socks {
+  width: 6.11875rem;
+  height: 6.325rem;
+  background: url("../images/socks.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -3.3375rem;
+  z-index: 20;
+}
+
+.container3 {
+  height: 100%;
+  background: url("../images/rank-bcg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+.container3 .wrap {
+  position: relative;
+  overflow: auto;
+}
+.container3 .top {
+  width: 15.375rem;
+  height: 5.75rem;
+  background: url("../images/rank.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 7.875rem;
+  margin-left: -7.6875rem;
+  text-indent: -9999px;
+}
+.container3 p {
+  margin: 0;
+  color: #fffb1f;
+  font-size: 1rem;
+  font-family: "SimHei";
+  position: absolute;
+  top: 13.34375rem;
+  width: 100%;
+  text-align: center;
+}
+.container3 .man {
+  width: 3.4375rem;
+  height: 4.28125rem;
+  background: url("../images/man-small.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.container3 .tree {
+  width: 6.46875rem;
+  height: 5.75rem;
+  background: url("../images/gifts-small.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.container3 .main {
+  width: 21.65625rem;
+  max-height: 21.625rem;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  border: 0.3125rem solid #155926;
+  position: absolute;
+  left: 50%;
+  top: 15.03125rem;
+  margin-left: -10.82813rem;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+}
+.container3 table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.container3 table thead {
+  font-size: 1.375rem;
+  font-family: "SimHei";
+  color: white;
+  line-height: 1.8;
+}
+.container3 table td {
+  width: 25%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-family: "SimHei";
+  border-top: 1px solid #01641a;
+  padding: 0.3rem 0;
+}
+.container3 table tr {
+  color: white;
+}
+.container3 table tr.active {
+  color: #fffb1f;
+}
+
+.container4 {
+  height: 100%;
+  background: url("../images/bcg1.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+.container4 .wrap {
+  position: relative;
+  overflow: auto;
+}
+.container4 .top {
+  width: 18rem;
+  height: 5.21875rem;
+  background: url("../images/reward-address.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 8.03125rem;
+  margin-left: -9rem;
+}
+.container4 form {
+  width: 21.5625rem;
+  box-sizing: border-box;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 0.3125rem solid #155926;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+  position: absolute;
+  left: 50%;
+  top: 13.6875rem;
+  margin-left: -10.78125rem;
+}
+.container4 form label {
+  width: 19.53125rem;
+  margin: 0 auto;
+  color: #fffb1f;
+  font-size: 1.125rem;
+  font-family: "SimHei";
+  display: block;
+}
+.container4 form input {
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  width: 19.53125rem;
+  height: 2.0625rem;
+  font-size: 1.125rem;
+  font-family: "SimHei";
+}
+.container4 form textarea {
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  box-sizing: border-box;
+  width: 19.53125rem;
+  height: 3.9375rem;
+  resize: none;
+  font-size: 1.125rem;
+  font-family: "SimHei";
+}
+.container4 form button {
+  width: 11.625rem;
+  height: 2.8125rem;
+  border: none;
+  background: url("../images/submit-info.png") no-repeat center center;
+  background-size: 7.78125rem 1.84375rem;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 15.6875rem;
+  margin-left: -5.8125rem;
+}
+
+.container5 {
+  height: 100%;
+  background: url("../images/rank-bcg.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+.container5 .wrap {
+  position: relative;
+  overflow: auto;
+}
+.container5 .top {
+  width: 17.3125rem;
+  height: 5.03125rem;
+  background: url("../images/reward_detail.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 50%;
+  top: 8.8125rem;
+  margin-left: -8.65625rem;
+  text-indent: -9999px;
+}
+.container5 .man {
+  width: 3.4375rem;
+  height: 4.28125rem;
+  background: url("../images/man-small.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.container5 .tree {
+  width: 6.46875rem;
+  height: 5.75rem;
+  background: url("../images/gifts-small.png") no-repeat 0 0;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.container5 .main {
+  margin: 0px;
+  padding: 0px;
+  width: 21.65625rem;
+  max-height: 21.625rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 0.3125rem solid #155926;
+  position: absolute;
+  left: 50%;
+  top: 15.03125rem;
+  margin-left: -10.82813rem;
+  border-radius: 0.625rem;
+  background-color: #14742c;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 0.2rem #0a2208;
+  list-style-position: inside;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.container5 .main li {
+  color: white;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  font-family: "SimHei";
+}
+
+@-webkit-keyframes slideDown {
+  from {
+    top: -5.75rem;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    top: 100%;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideDown {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: -5.75rem;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: 100%;
+  }
+}
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+}
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+}
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+}
+
+/*# sourceMappingURL=style.css.map */
