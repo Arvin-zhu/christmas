@@ -6,6 +6,7 @@ window.onload=function () {
     var pattern=/boom\.png/;
     var cur_rem=parseInt($("html").css("fontSize"));
     var preX,curX,curY,transferX=0,cur_left,cur_right,cur_top,body_w,cur_w,cur_h,result=0,score_num,start;
+    var body_h=parseInt($("body")[0].offsetHeight);
     /*------------------------存储礼物路径和宽高代码开始---------------------------------*/
     var img_box=[
         {"src":"images/gifts-1.png","width":"2rem","height":"1.9rem","score":2},
@@ -19,6 +20,8 @@ window.onload=function () {
         {"src":"images/boom.png","width":"3.30163rem","height":"2.64946rem","score":-10},
         {"src":"images/boom.png","width":"3.30163rem","height":"2.64946rem","score":-10},
         {"src":"images/boom.png","width":"3.30163rem","height":"2.64946rem","score":-10},
+        {"src":"images/boom.png","width":"3.30163rem","height":"2.64946rem","score":-10},
+        {"src":"images/boom.png","width":"3.30163rem","height":"2.64946rem","score":-10},
         {"src":"images/boom2.png","width":"7.84511rem","height":"7.73641rem","score":-10}
     ];
     $(".zhezhao").on("click",function () {
@@ -26,9 +29,11 @@ window.onload=function () {
         $(".guide").css("display","none");
         start=setInterval(generate_gifts,800);
     })
-
-    /*-------------------------游戏开始生成袜子----------------------------------*/
-
+    $(".container2").on("touchmove",function (event) {
+        if($(".container2 .zhezhao").css("display")=="none"&&event.target.className.toLowerCase()!="socks"){
+            event.preventDefault();
+        }
+    })
     /*------------------------生成礼物代码开始---------------------------*/
     function generate_gifts() {
         var gifts_index=Math.round(Math.random()*10);
@@ -36,52 +41,83 @@ window.onload=function () {
         var x_position=Math.round(Math.random()*range_right)+"rem";
         var y_position=-img_box[gifts_index].height;
         var img=document.createElement("img");
-        var speed=Math.round(Math.random()*3+2);   //礼物下落速度
+        var speed=Math.round(Math.random()*4+3);   //礼物下落速度
         img.src=img_box[gifts_index].src;
         img.style.width=img_box[gifts_index].width;
         img.style.height=img_box[gifts_index].height;
         img.score=img_box[gifts_index].score;
         img.style.position="absolute";
         img.style.left=x_position;
-        img.style.top=-y_position;
-        img.classList.add("slideDown");
+        img.preventcount=false;
+        img.style.top=-y_position+"px";
+        img.style.opacity=0;
         img.classList.add("num"+_index);
-        if(pattern.test(img.src)){                   //正则判断是否为炸弹，是炸弹的话加速
-            $(img).css("webkitAnimationDuration",speed-1+"s");
-        }else{
-            $(img).css("webkitAnimationDuration",speed+"s");
-        }
-        $(img).css("webkitAnimationFillMode","forwards");
-        document.querySelector(".container2").appendChild(img);
-        document.querySelector("."+"num"+_index).addEventListener("webkitAnimationEnd",function () {
-            document.querySelector(".container2").removeChild(this);
-        },false);
-        var time=setInterval(function () {
-            if(test_collide(img)){          //碰撞检测
-                if(pattern.test(img.src)){  //正则判断是否为炸弹，是炸弹则转化为爆炸图片
-                    score_num=img.score;
-                    add(score_num);
-                    show_score(score_num,img);
-                    img.src=img_box[img_box.length-1].src;
-                    img.style.width=img_box[img_box.length-1].width;
-                    img.style.marginLeft=-parseInt(img_box[img_box.length-1].width)/2*cur_rem+"px";
-                    img.style.marginTop=-parseInt(img_box[img_box.length-1].height)/2*cur_rem+"px";
-                    img.style.height=img_box[img_box.length-1].height;
-                    $(this).css("zIndex",999);
-                    $(".socks").css("zIndex",0);
-                    shake();        //屏幕抖动
-                }else{                                   //如果不是炸弹则执行下面一行
-                    $(img).css("visibility","hidden");
-                    score_num=img.score;
-                    add(score_num);
-                    show_score(score_num,img);
-                    $(this).css("zIndex",9);
-                    $(".socks").css("zIndex",999);
+        img.collide=function () {
+                if(test_collide(img)){          //碰撞检测
+                    if(img.preventcount){return}
+                    img.preventcount=true;
+                    if(pattern.test(img.src)){  //正则判断是否为炸弹，是炸弹则转化为爆炸图片
+                        score_num=img.score;
+                        add(score_num);
+                        show_score(score_num,img);
+                        img.src=img_box[img_box.length-1].src;
+                        img.style.width=img_box[img_box.length-1].width;
+                        img.style.marginLeft=-parseInt(img_box[img_box.length-1].width)/2*cur_rem+"px";
+                        img.style.marginTop=-parseInt(img_box[img_box.length-1].height)/2*cur_rem+"px";
+                        img.style.height=img_box[img_box.length-1].height;
+                        $(this).css("zIndex",999);
+                        $(".socks").css("zIndex",0);
+                        shake();        //屏幕抖动
+                    }else{                                   //如果不是炸弹则执行下面一行
+                        $(img).css("visibility","hidden");
+                        score_num=img.score;
+                        add(score_num);
+                        show_score(score_num,img);
+                        $(this).css("zIndex",9);
+                        $(".socks").css("zIndex",999);
+                    }
                 }
-                clearInterval(time)
+            };
+        document.querySelector(".container2").appendChild(img);
+        if(pattern.test(img.src)){                   //正则判断是否为炸弹，是炸弹的话加速
+            if (/(Android)/i.test(navigator.userAgent)) {
+                slideDown(img,speed-1);
+            }else{
+                slideDown(img,speed+2);
+            }
+        }else{
+            slideDown(img,speed-1)
+        }
+        _index++;
+    }
+    /*-------------------------动画js写法(css动画在iphone6s上又问题)-----------------------------------*/
+    function slideDown(object_n,step) {
+        object_n.collision_time=setInterval(function () {
+            var oldh=$(object_n).position().top;
+            oldh+=step;
+            /*-----------------------安卓判定-----------------------------*/
+            if (/(Android)/i.test(navigator.userAgent)) {
+                if (!$(object_n).hasClass("slideDown")) {
+                    $(object_n).addClass("slideDown")
+                    $(object_n).css("webkitAnimationDuration", step+"s");
+                    $(object_n).css("webkitAnimationFillMode", "forwards");
+                    $(object_n)[0].addEventListener("webkitAnimationEnd", function () {
+                        clearInterval(object_n.collision_time);
+                        document.querySelector(".container2").removeChild(object_n);
+                    }, false)
+                }
+            } else {
+                object_n.style.opacity=1;
+                $(object_n).css("top",oldh+"px");
+                if(oldh>body_h+20){
+                    clearInterval(object_n.collision_time);
+                    document.querySelector(".container2").removeChild(object_n);
+                }
+            };
+            if(oldh>body_h*0.6){
+                object_n.collide();
             }
         },20);
-        _index++;
     }
     /*---------------------------袜子拖动代码----------------------------------------*/
 
